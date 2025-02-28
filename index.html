@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran Paisano - Tilisarao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #2d5a27, #4a8f44);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(70, 44, 23, 0.9);
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .live-button {
+            display: inline-block;
+            background-color: #dc2626;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .live-button:hover {
+            background-color: #b91c1c;
+            transform: translateY(2px);
+        }
+
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .participant-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .participant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .participant-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .participant-card.destacado {
+            border: 3px solid #ffd700;
+            background: linear-gradient(to bottom right, white, #fff8e7);
+        }
+
+        .participant-card.destacado h3 {
+            color: #b8860b;
+        }
+
+        .activities {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .activities h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .activities ul {
+            list-style: none;
+        }
+
+        .activities li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        footer {
+            background-color: rgba(70, 44, 23, 0.9);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+        }
+
+        /* Estilos para el reproductor de audio mini */
+        .audio-player {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Gran Paisano</div>
+            <nav>
+                <a href="index.html" class="active">Inicio</a>
+                <a href="participants.html">Participantes</a>
+                <a href="live.html">En Vivo</a>
+                <a href="galas.html">Galas</a>
+                <a href="vote.html">Votar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <section class="hero">
+            <h2>¡En vivo desde Tilisarao, San Luis!</h2>
+            <p>Donde 6 paisanos conviven en un auténtico campo, demostrando sus habilidades rurales</p>
+            <a href="live.html" class="live-button">Ver Transmisión en Vivo</a>
+        </section>
+
+        <section class="participants-grid">
+            <div class="participant-card destacado">
+                <h3>Marcos Mearte</h3>
+                <p>33 años</p>
+                <p><strong>Especialidad:</strong> Domador de caballos y payador</p>
+                <p><em>✨ Participante destacado de la semana ✨</em></p>
+            </div>
+            <div class="participant-card">
+                <h3>Don Pedro</h3>
+                <p>65 años</p>
+                <p><strong>Especialidad:</strong> Doma de caballos</p>
+            </div>
+            <div class="participant-card">
+                <h3>Doña Rosa</h3>
+                <p>58 años</p>
+                <p><strong>Especialidad:</strong> Cocina criolla</p>
+            </div>
+            <div class="participant-card">
+                <h3>Juan Carlos</h3>
+                <p>42 años</p>
+                <p><strong>Especialidad:</strong> Esquila de ovejas</p>
+            </div>
+            <div class="participant-card">
+                <h3>María Elena</h3>
+                <p>35 años</p>
+                <p><strong>Especialidad:</strong> Huerta orgánica</p>
+            </div>
+            <div class="participant-card">
+                <h3>El Pibe Martín</h3>
+                <p>25 años</p>
+                <p><strong>Especialidad:</strong> Arreo de ganado</p>
+            </div>
+        </section>
+
+        <section class="activities">
+            <h3>Actividades del día</h3>
+            <ul>
+                <li>🌅 Ordeñe de vacas - 5:00 AM</li>
+                <li>🍳 Preparación de desayuno criollo - 7:00 AM</li>
+                <li>🎯 Competencia de lazo - 10:00 AM</li>
+                <li>🥩 Almuerzo al asador - 13:00 PM</li>
+                <li>🎸 Payada con Marcos Mearte - 14:00 PM</li>
+                <li>🏆 Prueba semanal de habilidades - 15:00 PM</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>Gran Paisano © 2024 - Transmitiendo desde Tilisarao, San Luis</p>
+    </footer>
+    
+    <!-- Reproductor de audio mini -->
+    <div class="audio-player">
+        <audio controls>
+            <source src="granhermano.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participantes - Gran Paisano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #2d5a27, #4a8f44);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(70, 44, 23, 0.9);
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .participant-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .participant-profile {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .participant-profile:hover {
+            transform: translateY(-5px);
+        }
+
+        .participant-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .participant-info {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .participant-name {
+            font-size: 2em;
+            color: #462c17;
+            margin-bottom: 10px;
+        }
+
+        .participant-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .participant-bio {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .participant-skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .skill-tag {
+            background: #462c17;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Estilo especial para Marcos Mearte */
+        .participant-profile.destacado {
+            border: 3px solid #ffd700;
+            background: linear-gradient(to right, white, #fff8e7);
+        }
+
+        .participant-profile.destacado .participant-name {
+            color: #b8860b;
+        }
+
+        .voting-section {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .vote-button {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .vote-button:hover {
+            background: #b91c1c;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .participant-profile {
+                flex-direction: column;
+            }
+
+            .participant-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .participant-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Gran Paisano</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="participants.html" class="active">Participantes</a>
+                <a href="live.html">En Vivo</a>
+                <a href="galas.html">Galas</a>
+                <a href="vote.html">Votar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="participant-container">
+        <!-- Marcos Mearte - Participante Destacado -->
+        <div class="participant-profile destacado">
+            <img src="/api/placeholder/300/300" alt="Marcos Mearte" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">Marcos Mearte</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 33 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Domador de caballos
+                    </div>
+                    <div class="stat-box">
+                        <strong>Tiempo en el campo:</strong> 20 años
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    Marcos es un experimentado domador de caballos y payador reconocido en toda la región. 
+                    Su conexión especial con los animales y su habilidad para la payada lo han convertido 
+                    en uno de los participantes más queridos del programa.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Doma de caballos</span>
+                    <span class="skill-tag">Payador</span>
+                    <span class="skill-tag">Jinete experto</span>
+                    <span class="skill-tag">Guitarrero</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR MARCOS</a>
+            </div>
+        </div>
+
+        <!-- Don Pedro -->
+        <div class="participant-profile">
+            <img src="/api/placeholder/300/300" alt="Don Pedro" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">Don Pedro</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 65 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Gaucho tradicional
+                    </div>
+                    <div class="stat-box">
+                        <strong>Tiempo en el campo:</strong> 50 años
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    Don Pedro es el participante más experimentado del programa. Sus años de trabajo en el campo 
+                    lo han convertido en un verdadero maestro de las tradiciones gauchas.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Doma de caballos</span>
+                    <span class="skill-tag">Asador experto</span>
+                    <span class="skill-tag">Conocimiento ganadero</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR DON PEDRO</a>
+            </div>
+        </div>
+
+        <!-- Doña Rosa -->
+        <div class="participant-profile">
+            <img src="/api/placeholder/300/300" alt="Doña Rosa" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">Doña Rosa</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 58 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Cocinera tradicional
+                    </div>
+                    <div class="stat-box">
+                        <strong>Especialidad:</strong> Cocina criolla
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    Doña Rosa es la maestra de la cocina criolla. Sus empanadas y locros son legendarios 
+                    en toda la región, y sus conocimientos de hierbas medicinales son invaluables.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Cocina criolla</span>
+                    <span class="skill-tag">Hierbas medicinales</span>
+                    <span class="skill-tag">Conservas caseras</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR DOÑA ROSA</a>
+            </div>
+        </div>
+
+        <!-- Juan Carlos -->
+        <div class="participant-profile">
+            <img src="/api/placeholder/300/300" alt="Juan Carlos" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">Juan Carlos</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 42 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Esquilador
+                    </div>
+                    <div class="stat-box">
+                        <strong>Especialidad:</strong> Esquila de ovejas
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    Juan Carlos es un experto esquilador con años de experiencia. Su habilidad con las 
+                    tijeras y su conocimiento sobre el cuidado de las ovejas lo hacen único.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Esquila profesional</span>
+                    <span class="skill-tag">Cuidado de ovejas</span>
+                    <span class="skill-tag">Artesanías en lana</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR JUAN CARLOS</a>
+            </div>
+        </div>
+
+        <!-- María Elena -->
+        <div class="participant-profile">
+            <img src="/api/placeholder/300/300" alt="María Elena" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">María Elena</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 35 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Agricultora
+                    </div>
+                    <div class="stat-box">
+                        <strong>Especialidad:</strong> Huerta orgánica
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    María Elena es una apasionada de la agricultura orgánica. Sus conocimientos sobre 
+                    cultivos naturales y su compromiso con el medio ambiente la destacan.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Agricultura orgánica</span>
+                    <span class="skill-tag">Compostaje</span>
+                    <span class="skill-tag">Plantas medicinales</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR MARÍA ELENA</a>
+            </div>
+        </div>
+
+        <!-- El Pibe Martín -->
+        <div class="participant-profile">
+            <img src="/api/placeholder/300/300" alt="El Pibe Martín" class="participant-image">
+            <div class="participant-info">
+                <h2 class="participant-name">El Pibe Martín</h2>
+                <div class="participant-stats">
+                    <div class="stat-box">
+                        <strong>Edad:</strong> 25 años
+                    </div>
+                    <div class="stat-box">
+                        <strong>Origen:</strong> Tilisarao, San Luis
+                    </div>
+                    <div class="stat-box">
+                        <strong>Profesión:</strong> Arriero
+                    </div>
+                    <div class="stat-box">
+                        <strong>Especialidad:</strong> Arreo de ganado
+                    </div>
+                </div>
+                <p class="participant-bio">
+                    El más joven de los participantes, Martín representa la nueva generación del campo. 
+                    Su energía y habilidad con el ganado lo han convertido en una promesa del arreo.
+                </p>
+                <div class="participant-skills">
+                    <span class="skill-tag">Arreo de ganado</span>
+                    <span class="skill-tag">Jinete</span>
+                    <span class="skill-tag">Trabajo con vacunos</span>
+                </div>
+                <a href="vote.html" class="vote-button">VOTAR POR MARTÍN</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

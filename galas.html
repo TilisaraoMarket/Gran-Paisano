@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galas - Gran Paisano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #2d5a27, #4a8f44);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(70, 44, 23, 0.9);
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .galas-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .next-gala {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, #ffd700, #ffc800);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .next-gala h2 {
+            color: #462c17;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #462c17;
+        }
+
+        .countdown-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .past-galas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gala-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gala-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gala-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #ddd;
+        }
+
+        .gala-content {
+            padding: 1.5rem;
+        }
+
+        .gala-title {
+            font-size: 1.2rem;
+            color: #462c17;
+            margin-bottom: 0.5rem;
+        }
+
+        .gala-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .gala-highlights {
+            margin-top: 1rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .highlight-item:before {
+            content: "•";
+            color: #462c17;
+            margin-right: 0.5rem;
+        }
+
+        .watch-button {
+            display: inline-block;
+            background: #462c17;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .watch-button:hover {
+            background: #2d1c0f;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Gran Paisano</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="participants.html">Participantes</a>
+                <a href="live.html">En Vivo</a>
+                <a href="galas.html" class="active">Galas</a>
+                <a href="vote.html">Votar</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="galas-container">
+        <div class="next-gala">
+            <h2>Próxima Gala: Gran Desafío Gaucho</h2>
+            <p>Domingo 21 de Abril - 21:00 hs</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number">02</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">15</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">45</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">30</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="color: white; margin-bottom: 1rem;">Galas Anteriores</h2>
+        
+        <div class="past-galas">
+            <div class="gala-card">
+                <div class="gala-image"></div>
+                <div class="gala-content">
+                    <h3 class="gala-title">Gala 3: Destrezas Criollas</h3>
+                    <div class="gala-date">14 de Abril, 2024</div>
+                    <div class="gala-highlights">
+                        <div class="highlight-item">Marcos Mearte ganó la competencia de lazo</div>
+                        <div class="highlight-item">Doña Rosa preparó el mejor locro</div>
+                        <div class="highlight-item">Don Pedro mostró sus habilidades con el caballo</div>
+                    </div>
+                    <a href="#" class="watch-button">Ver Repetición</a>
+                </div>
+            </div>
+
+            <div class="gala-card">
+                <div class="gala-image"></div>
+                <div class="gala-content">
+                    <h3 class="gala-title">Gala 2: Noche de Fogón</h3>
+                    <div class="gala-date">7 de Abril, 2024</div>
+                    <div class="gala-highlights">
+                        <div class="highlight-item">Payadas y guitarreadas junto al fuego</div>
+                        <div class="highlight-item">Historias de campo y tradiciones</div>
+                        <div class="highlight-item">Asado criollo bajo las estrellas</div>
+                    </div>
+                    <a href="#" class="watch-button">Ver Repetición</a>
+                </div>
+            </div>
+
+            <div class="gala-card">
+                <div class="gala-image"></div>
+                <div class="gala-content">
+                    <h3 class="gala-title">Gala 1: Inauguración</h3>
+                    <div class="gala-date">31 de Marzo, 2024</div>
+                    <div class="gala-highlights">
+                        <div class="highlight-item">Presentación de los participantes</div>
+                        <div class="highlight-item">Primera prueba de habilidades</div>
+                        <div class="highlight-item">Gran fiesta criolla de bienvenida</div>
+                    </div>
+                    <a href="#" class="watch-button">Ver Repetición</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
